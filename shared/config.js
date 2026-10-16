@@ -120,6 +120,36 @@ window.EASTC_CONFIG = {
       name: "EASTC Technical School",
       mark: "TS",
       tagline: "CAPS · Grade R–12",
+      /* Published on eastctechnicalschool.co.za. Other entities keep the shared placeholders. */
+      contact: {
+        mailto: "admin@eastctechnicalschool.co.za",
+        email: "admin@eastctechnicalschool.co.za",
+        phoneDisplay: "010 745 7099",
+        phoneTel: "+27107457099",
+        mobileDisplay: "079 220 3141",
+        mobileTel: "+27792203141",
+        address: "Cnr Pienaar & Commissioner Str, Kempton Park, 1619",
+        addressNote: "The school contact page also lists Cnr Greyila & Kerk Str, Kempton Park, 1619."
+      },
+      eft: {
+        published: true,
+        source: "Published on eastctechnicalschool.co.za/fees/.",
+        bankName: "ABSA Bank",
+        branchName: "Gauteng East High Value",
+        accountNumber: "41 0558 1622",
+        branchCode: "623005",
+        referenceHelp: "Name of Student & Grade"
+      },
+      fees: [
+        { label: "Grade R", amount: "R1,000 per month", note: "January to December 2026" },
+        { label: "Grade 1–7", amount: "R1,500 per month", note: "January to December 2026" },
+        { label: "Grade 8–9", amount: "R1,800 per month", note: "January to December 2026" },
+        { label: "Grade 10–11", amount: "R2,000 per month", note: "January to December 2026" },
+        { label: "Grade 12", amount: "From 2027", note: "A 2026 monthly fee is not published" },
+        { label: "Registration", amount: "R300 once-off", note: "Non-refundable" },
+        { label: "Aftercare", amount: "R400 per month", note: "Payable before the 7th of every month" },
+        { label: "Aftercare, per day", amount: "R100 per day", note: "Payable on the day" }
+      ],
       courses: [
         "CAPS curriculum from Grade R to Grade 12 on the Maxwell Street campus.",
         "Foundation phase: Grade R–3.",

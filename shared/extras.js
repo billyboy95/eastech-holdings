@@ -107,10 +107,23 @@
     });
   }
 
+  function activeEntity() {
+    return cfg.entities[entityId()] || cfg.entities.holdings;
+  }
+
+  function activeContact() {
+    const over = activeEntity().contact;
+    return over ? Object.assign({}, cfg.contact, over) : cfg.contact;
+  }
+
+  function activeEft() {
+    return activeEntity().eft || cfg.eft;
+  }
+
   function renderDirectory() {
     const mount = document.querySelector("[data-directory]");
     if (!mount) return;
-    const campus = cfg.contact;
+    const campus = activeContact();
     mount.innerHTML = cfg.departments.map((dept) => {
       return (
         '<article class="dept-card">' +
@@ -121,6 +134,7 @@
           '<p>Direct phone: ' + escapeHtml(dept.phone) + '</p>' +
           '<p>A direct line for this department is to be confirmed. The campus contacts below are the published numbers.</p>' +
           '<p><a href="tel:' + escapeHtml(campus.phoneTel) + '">' + escapeHtml(campus.phoneDisplay) + '</a></p>' +
+          (campus.mobileDisplay ? '<p><a href="tel:' + escapeHtml(campus.mobileTel) + '">' + escapeHtml(campus.mobileDisplay) + '</a></p>' : "") +
           '<p><a href="mailto:' + escapeHtml(campus.email) + '">' + escapeHtml(campus.email) + '</a></p>' +
         '</article>'
       );
@@ -143,22 +157,37 @@
   function renderEft() {
     const mount = document.querySelector("[data-eft]");
     if (!mount) return;
-    const eft = cfg.eft;
+    const eft = activeEft();
+    const published = eft.published === true;
     const rows = [
       ["Bank", eft.bankName],
+      ["Branch", eft.branchName],
       ["Account name", eft.accountName],
       ["Account number", eft.accountNumber],
       ["Branch code", eft.branchCode],
       ["Account type", eft.accountType]
-    ];
+    ].filter((row) => row[1] && (!published || !isPlaceholder(row[1])));
+    const intro = published
+      ? eft.source
+      : "These fields are empty on purpose. Real bank details are not published for this entity.";
     mount.innerHTML =
-      '<span class="placeholder-flag">Placeholder</span>' +
+      (published ? "" : '<span class="placeholder-flag">Placeholder</span>') +
       '<h3>EFT banking details</h3>' +
-      '<p>These fields are empty on purpose. Real bank details are not published here.</p>' +
+      '<p>' + escapeHtml(intro) + '</p>' +
       '<ul class="eft-list">' +
         rows.map((row) => "<li><span>" + escapeHtml(row[0]) + "</span><strong>" + escapeHtml(row[1]) + "</strong></li>").join("") +
       "</ul>" +
-      "<p>" + escapeHtml(eft.referenceHelp) + "</p>";
+      "<p>Reference: " + escapeHtml(eft.referenceHelp) + "</p>";
+  }
+
+  function renderFees() {
+    const fees = activeEntity().fees;
+    if (!fees) return;
+    const html =
+      '<div class="table-wrap"><table><thead><tr><th>Item</th><th>Amount</th><th>When</th></tr></thead><tbody>' +
+      fees.map((fee) => "<tr><td><strong>" + escapeHtml(fee.label) + "</strong></td><td>" + escapeHtml(fee.amount) + "</td><td>" + escapeHtml(fee.note) + "</td></tr>").join("") +
+      "</tbody></table></div>";
+    document.querySelectorAll("[data-fee-table]").forEach((el) => { el.innerHTML = html; });
   }
 
   function pageUrl(status) {
@@ -330,8 +359,9 @@
         message: form.querySelector("#contact-message").value.trim(),
         entity: entityId()
       };
-      const endpoint = cfg.contact.endpoint;
-      const mailto = cfg.contact.mailto;
+      const campus = activeContact();
+      const endpoint = campus.endpoint;
+      const mailto = campus.mailto;
       const subject = "Staff contact: " + data.department + " (" + (cfg.entities[data.entity] || {}).name + ")";
       const body = "Name: " + data.name + "\nEmail: " + data.email + "\nDepartment: " + data.department + "\n\n" + data.message;
 
@@ -370,15 +400,16 @@
     if (document.querySelector(".float-contact")) return;
     const wrap = document.createElement("div");
     wrap.className = "float-contact";
+    const campus = activeContact();
     const call = document.createElement("a");
     call.className = "float-btn float-call";
-    call.href = "tel:" + cfg.contact.phoneTel;
-    call.textContent = "Call " + cfg.contact.phoneDisplay;
+    call.href = "tel:" + campus.phoneTel;
+    call.textContent = "Call " + campus.phoneDisplay;
     const wa = document.createElement("a");
     wa.className = "float-btn float-wa";
-    const number = String(cfg.contact.whatsappNumber || "").replace(/[^\d]/g, "");
+    const number = String(campus.whatsappNumber || "").replace(/[^\d]/g, "");
     const staffHref = (document.body.dataset.shared === "shared" ? "" : "") + "contact-staff.html#whatsapp";
-    if (isPlaceholder(cfg.contact.whatsappNumber) || number.length < 10) {
+    if (isPlaceholder(campus.whatsappNumber) || number.length < 10) {
       wa.classList.add("is-placeholder");
       wa.href = staffHref;
       wa.textContent = "WhatsApp — to be confirmed";
@@ -399,6 +430,7 @@
   renderDirectory();
   renderFunding();
   renderEft();
+  renderFees();
   initPayForm();
   initContactForm();
   initFloat();
