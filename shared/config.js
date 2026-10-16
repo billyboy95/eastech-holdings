@@ -80,7 +80,8 @@ window.EASTC_CONFIG = {
     {
       name: "EASTC Foundation Scholarship and Access Fund",
       detail: "The Foundation site describes Scholarship and Access: bursaries, rural student support, and women in technical fields. A page that uses this fund name on its own is to be confirmed.",
-      href: "https://eastechfoundation.co.za/"
+      href: "https://eastechfoundation.co.za/",
+      logo: "eastc-foundation-logo.png"
     }
   ],
 

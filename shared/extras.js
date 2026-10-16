@@ -144,8 +144,12 @@
   function renderFunding() {
     document.querySelectorAll("[data-funding]").forEach((mount) => {
       mount.innerHTML = cfg.funding.map((item) => {
+        const logo = item.logo
+          ? '<img class="funding-logo" src="' + escapeHtml(mediaUrl(item.logo)) + '" alt="">'
+          : "";
         return (
           '<a class="funding-card" href="' + escapeHtml(item.href) + '" target="_blank" rel="noopener noreferrer">' +
+            logo +
             '<h3>' + escapeHtml(item.name) + '</h3>' +
             '<p>' + escapeHtml(item.detail) + '</p>' +
           '</a>'
