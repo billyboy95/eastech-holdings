@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" role="img" aria-label="Placeholder mark for the managing director. Not a photograph.">
+  <rect width="640" height="800" fill="#123056"/>
+  <rect x="28" y="28" width="584" height="744" fill="none" stroke="#E8BC5A" stroke-width="8"/>
+  <rect x="242" y="210" width="156" height="156" fill="none" stroke="#E8BC5A" stroke-width="12"/>
+  <rect x="230" y="410" width="180" height="14" fill="#E8BC5A"/>
+  <text x="320" y="520" text-anchor="middle" fill="#F4F6F9" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="4">PLACEHOLDER</text>
+  <text x="320" y="600" text-anchor="middle" fill="#E8BC5A" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="800">MD</text>
+  <text x="320" y="670" text-anchor="middle" fill="#F4F6F9" font-family="Arial, Helvetica, sans-serif" font-size="22">Photo to be confirmed</text>
+</svg>
