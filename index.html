@@ -3,12 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="shared/img/eastc-varsity-logo.png">
 <title>EASTC Holdings · Technocentric Varsity</title>
 <meta name="description" content="EASTC Holdings: Technical School (Grade R–12), Artisanal College, EASTC Varsity (N3–N6), EASTECH Institute, Foundation, and The Food Court. 43 Maxwell Street, Kempton Park.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="eastc-foundation/assets/css/site.css">
 <link rel="stylesheet" href="shared/3d.css">
+<link rel="stylesheet" href="shared/extras.css">
 <style>
   body { background: #070d18; }
   .enter-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
@@ -19,8 +21,9 @@
   @media (max-width: 980px) { .enter-grid, .chart { grid-template-columns: 1fr; } .entity-stack { max-height: 48vh; overflow: auto; } }
 </style>
 </head>
-<body>
+<body class="holdings" data-entity="holdings" data-shared="shared">
 <a class="skip" href="#enter">Skip to entities</a>
+<div class="holdings-tools"><a class="holdings-brand" href="index.html"><img class="brand-logo" src="shared/img/eastc-varsity-logo.png" alt="EASTC Technocentric Varsity, established 2006"><span>EASTC Holdings</span></a><div class="holdings-actions"><a href="contact-staff.html">Staff &amp; management</a><a class="holdings-pay" href="pay.html">Pay / Fees</a></div></div>
 
 <section class="scroll-pin scene-root" data-scroll-pin>
   <div class="sticky">
@@ -115,12 +118,43 @@
       <a class="entity-card" href="https://eastech.co.za/artisanal-college/" style="grid-template-columns:1fr"><img src="shared/img/campus-courtyard.jpg" alt="" style="width:100%;height:150px"><div><h3>Artisanal College</h3><p>Trades &amp; trade tests</p></div></a>
       <a class="entity-card" href="https://eastech.co.za/eastc-varsity/" style="grid-template-columns:1fr"><img src="shared/img/campus-sky.jpg" alt="" style="width:100%;height:150px"><div><h3>EASTC Varsity</h3><p>N3–N6</p></div></a>
       <a class="entity-card" href="https://eastech-institute.co.za/" style="grid-template-columns:1fr"><img src="shared/img/campus-building.jpg" alt="" style="width:100%;height:150px"><div><h3>EASTECH Institute</h3><p>HCert &amp; degrees</p></div></a>
-      <a class="entity-card" href="https://eastechfoundation.co.za/" style="grid-template-columns:1fr"><img src="shared/img/campus-wide.jpg" alt="" style="width:100%;height:150px"><div><h3>EASTC Foundation NPC</h3><p>Scholarships &amp; CSI</p></div></a>
+      <a class="entity-card" href="https://eastechfoundation.co.za/" style="grid-template-columns:1fr"><img class="logo-fit" src="shared/img/eastc-foundation-logo.png" alt=""><div><h3>EASTC Foundation NPC</h3><p>Scholarships &amp; CSI</p></div></a>
       <a class="entity-card" href="https://eastechfoodcourt.co.za/" style="grid-template-columns:1fr"><img src="shared/img/serve.jpg" alt="" style="width:100%;height:150px"><div><h3>The Food Court</h3><p>Daily meals &amp; specials</p></div></a>
     </div>
     <p style="margin-top:36px;color:rgba(255,255,255,.55)">43 Maxwell Street, Kempton Park · 011 394 1488 · 082 605 1134 · queries@eastc.co.za · DHET 2019/FE07/D33</p>
   </div>
+<div class="info-band wrap">
+<div class="eyebrow">Leadership</div>
+<h2>Leadership</h2>
+<p>Photo slots for the chief executive officer and the managing director of EASTC Holdings. Names, titles, and photos are placeholders.</p>
+<div class="leader-grid" data-leader-grid></div>
+</div>
+<section style="padding-top:36px" class="campus-facts" data-campus-facts aria-labelledby="campus-facts-heading">
+<div class="wrap">
+<div class="section-head"><div class="eyebrow">Before you enrol</div><h2 id="campus-facts-heading">Courses, accommodation, and accreditation</h2><p>Programmes are designed to DHET standards. The notes below use what is already published on the EASTC sites. Open items are marked to be confirmed.</p></div>
+<div class="fact-grid" data-fact-grid></div>
+<noscript><p>Programmes are designed to DHET standards. This website publishes DHET 2019/FE07/D33. Shared accommodation is listed on eastc.co.za at R2,100 for short courses only. Places, rooms, and which programmes those references cover are to be confirmed.</p></noscript>
+</div></section>
 </main>
+<footer><div class="wrap foot-grid">
+<div><a class="brand" href="index.html"><img class="brand-logo" src="shared/img/eastc-varsity-logo.png" alt=""><div><strong>EASTC Holdings</strong><span>Technocentric Varsity</span></div></a>
+<p>43 Maxwell Street, Kempton Park.</p></div>
+<div><h4>This site</h4><a href="pay.html">Pay / Fees</a><a href="contact-staff.html">Staff &amp; management</a></div>
+<div><h4>Holdings</h4>
+<a href="technical-school/index.html">Technical School</a>
+<a href="artisanal-college/index.html">Artisanal College</a>
+<a href="eastc-varsity/index.html">EASTC Varsity</a>
+<a href="https://eastech-institute.co.za/">EASTECH Institute</a>
+</div>
+<div><h4>Campus</h4>
+<a class="with-logo" href="https://eastechfoundation.co.za/"><img class="inline-logo" src="shared/img/eastc-foundation-logo.png" alt="">Foundation</a>
+<a href="https://eastechfoodcourt.co.za/">The Food Court</a>
+<p>011 394 1488 · 082 605 1134 · queries@eastc.co.za</p></div>
+</div>
+<div class="wrap legal"><div>&copy; EASTC Holdings</div><div>DHET 2019/FE07/D33</div></div>
+</footer>
+<script src="shared/config.js"></script>
+<script src="shared/extras.js"></script>
 <script src="shared/3d.js"></script>
 </body>
 </html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="shared/img/eastc-varsity-logo.png">
+<title>Pay student fees | EASTC Holdings</title>
+<meta name="description" content="Pay student fees with Yoco. Test mode is on.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="technical-school/assets/css/site.css">
+<link rel="stylesheet" href="shared/extras.css">
+<link rel="stylesheet" href="shared/3d.css">
+</head><body class="institute" data-entity="holdings" data-shared="shared">
+<a class="skip" href="#main">Skip</a>
+<header class="nav"><div class="wrap nav-inner">
+<a class="brand" href="index.html"><img class="brand-logo" src="shared/img/eastc-varsity-logo.png" alt=""><div><strong>EASTC Holdings</strong><span>Technocentric Varsity</span></div></a>
+<button class="menu-btn" aria-label="Menu">☰</button>
+<nav class="nav-links">
+<a href="index.html">Home</a>
+<a href="technical-school/index.html">Technical School</a>
+<a href="artisanal-college/index.html">Artisanal College</a>
+<a href="eastc-varsity/index.html">Varsity</a>
+<a href="contact-staff.html">Staff</a>
+<a class="btn btn-gold" href="pay.html">Pay / Fees</a>
+</nav></div></header><main id="main">
+<section class="page-hero"><div class="wrap"><h1>Pay student fees</h1><p>Two fields. The amount, then your student number or invoice. Card details stay on Yoco.</p></div></section>
+<section><div class="wrap pay-layout">
+<form id="pay-fees" class="panel" method="post" action="#">
+<p class="mode-banner" data-pay-mode>Test mode is on. No payment is sent until a Yoco test payment link or a checkout endpoint is saved in shared/config.js.</p>
+<label for="fee-amount">Amount (ZAR)</label>
+<input id="fee-amount" name="amount" type="number" inputmode="decimal" min="2" step="0.01" required autocomplete="transaction-amount">
+<label for="fee-reference">Student number or invoice</label>
+<input id="fee-reference" name="reference" type="text" required maxlength="64" autocomplete="off">
+<button class="btn btn-gold" type="submit">Pay student fees</button>
+<p class="success" data-pay-status role="status"></p>
+<details class="connect-note"><summary>Connecting Yoco</summary>
+<p class="note">Test mode is on in shared/config.js. Paste a Yoco test payment link into YOCO_PAYMENT_LINK_URL, or point YOCO_CHECKOUT_ENDPOINT at your server. The server calls Yoco Checkout at https://payments.yoco.com/api/checkouts with the secret key and returns redirectUrl. YOCO_PUBLIC_KEY and YOCO_SECRET_KEY stay placeholders in this public file. The browser does not send the secret.</p>
+<p class="note">A payment link may include {amount}, {amountCents}, and {reference}. The checkout endpoint receives the amount in cents, the reference, this campus, and the return addresses.</p>
+</details>
+</form>
+<aside class="eft-card" data-eft>
+<span class="placeholder-flag">Placeholder</span>
+<h3>EFT banking details</h3>
+<p>These fields are empty on purpose. Real bank details are not published here.</p>
+<ul class="eft-list">
+<li><span>Bank</span><strong>[Bank name to be confirmed]</strong></li>
+<li><span>Account name</span><strong>[Account name to be confirmed]</strong></li>
+<li><span>Account number</span><strong>[Account number to be confirmed]</strong></li>
+<li><span>Branch code</span><strong>[Branch code to be confirmed]</strong></li>
+<li><span>Account type</span><strong>[Account type to be confirmed]</strong></li>
+</ul>
+<p>Use your student number or invoice number as the payment reference.</p>
+</aside>
+</div></section>
+<section><div class="wrap">
+<div class="section-head"><div class="eyebrow">Student funding</div><h2>Ways to fund your studies</h2><p>Each link opens that provider’s own site. The provider decides who qualifies. Whether EASTC is on a provider’s institution list is to be confirmed. Pay the amount on your invoice. Course fees are published in the EASTC brochure on eastc.co.za.</p></div>
+<div class="funding-grid" data-funding></div>
+</div></section>
+<section class="campus-facts" data-campus-facts aria-labelledby="campus-facts-heading">
+<div class="wrap">
+<div class="section-head"><div class="eyebrow">Before you enrol</div><h2 id="campus-facts-heading">Courses, accommodation, and accreditation</h2><p>Programmes are designed to DHET standards. The notes below use what is already published on the EASTC sites. Open items are marked to be confirmed.</p></div>
+<div class="fact-grid" data-fact-grid></div>
+<noscript><p>Programmes are designed to DHET standards. This website publishes DHET 2019/FE07/D33. Shared accommodation is listed on eastc.co.za at R2,100 for short courses only. Places, rooms, and which programmes those references cover are to be confirmed.</p></noscript>
+</div></section>
+
+</main><footer><div class="wrap foot-grid">
+<div><a class="brand" href="index.html"><img class="brand-logo" src="shared/img/eastc-varsity-logo.png" alt=""><div><strong>EASTC Holdings</strong><span>Technocentric Varsity</span></div></a>
+<p>43 Maxwell Street, Kempton Park.</p></div>
+<div><h4>This site</h4><a href="pay.html">Pay / Fees</a><a href="contact-staff.html">Staff &amp; management</a></div>
+<div><h4>Holdings</h4>
+<a href="technical-school/index.html">Technical School</a>
+<a href="artisanal-college/index.html">Artisanal College</a>
+<a href="eastc-varsity/index.html">EASTC Varsity</a>
+<a href="https://eastech-institute.co.za/">EASTECH Institute</a>
+</div>
+<div><h4>Campus</h4>
+<a class="with-logo" href="https://eastechfoundation.co.za/"><img class="inline-logo" src="shared/img/eastc-foundation-logo.png" alt="">Foundation</a>
+<a href="https://eastechfoodcourt.co.za/">The Food Court</a>
+<p>011 394 1488 · 082 605 1134 · queries@eastc.co.za</p></div>
+</div>
+<div class="wrap legal"><div>&copy; <span data-year></span> EASTC Holdings</div><div><span class="badge">DHET 2019/FE07/D33</span></div></div>
+</footer>
+<script src="shared/config.js"></script>
+<script src="shared/extras.js"></script>
+<script src="technical-school/assets/js/site.js"></script>
+</body></html>

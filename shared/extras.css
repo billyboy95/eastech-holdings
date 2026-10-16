@@ -1,0 +1,302 @@
+/* Shared additions for payments, staff contact, facts, and leadership. */
+
+.wrap { width: min(1180px, calc(100% - 48px)); margin-left: auto; margin-right: auto; }
+.panel ul { margin: 8px 0 0 18px; color: #374151; }
+.nav-links .btn { white-space: nowrap; }
+
+.mode-banner {
+  background: #fff7e6;
+  border: 1px solid #D4A437;
+  color: #0B1F3A;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.placeholder-flag,
+.to-confirm {
+  display: inline-block;
+  margin: 0 0 8px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid #D4A437;
+  color: #0B1F3A;
+  background: #fff7e6;
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.fact-grid,
+.leader-grid,
+.dept-grid,
+.funding-grid {
+  display: grid;
+  gap: 18px;
+}
+.fact-grid { grid-template-columns: repeat(3, 1fr); }
+.leader-grid,
+.dept-grid { grid-template-columns: 1fr 1fr; }
+.funding-grid { grid-template-columns: repeat(3, 1fr); }
+
+.fact-card,
+.leader-card,
+.dept-card,
+.funding-card,
+.eft-card {
+  background: #fff;
+  border: 1px solid #E6EAF0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.fact-card,
+.dept-card,
+.funding-card,
+.eft-card { padding: 22px; }
+.fact-card h3,
+.dept-card h3,
+.funding-card h3,
+.eft-card h3,
+.leader-card h3 {
+  font-size: 18px;
+  color: #0B1F3A;
+  margin: 0 0 8px;
+}
+.fact-card p,
+.dept-card p,
+.funding-card p,
+.eft-card p,
+.leader-card p { color: #374151; font-size: 14px; margin: 0 0 10px; }
+.fact-card p:last-child,
+.dept-card p:last-child,
+.funding-card p:last-child,
+.leader-card p:last-child { margin-bottom: 0; }
+
+.leader-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  background: #0B1F3A;
+}
+.leader-card .card-body { padding: 22px; }
+.leader-name { font-family: "Montserrat", sans-serif; font-weight: 800; color: #0B1F3A; }
+
+.pay-layout,
+.staff-layout {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.eft-list { list-style: none; display: grid; gap: 8px; margin: 12px 0 0; }
+.eft-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #E6EAF0;
+  font-size: 14px;
+}
+.eft-list span { color: #6B7280; }
+.eft-list strong { color: #0B1F3A; text-align: right; }
+
+.funding-card { display: block; color: inherit; }
+.funding-card:hover { border-color: #D4A437; }
+.funding-card h3 { margin-bottom: 6px; }
+
+.dept-card a { color: #0B1F3A; font-weight: 700; }
+
+.connect-note { margin-top: 8px; }
+.connect-note summary { cursor: pointer; font-weight: 700; color: #0B1F3A; }
+
+footer { padding-bottom: 96px; }
+
+/* Original crests keep their own proportions. Height is fixed; width follows. */
+.brand-logo {
+  height: 56px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  flex: 0 0 auto;
+  display: block;
+}
+.inline-logo,
+.funding-logo {
+  width: auto;
+  object-fit: contain;
+  flex: 0 0 auto;
+  display: block;
+}
+.inline-logo { height: 52px; }
+.funding-logo { height: 84px; margin: 0 0 12px; }
+footer a.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+}
+footer a.with-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.entity-card img.logo-fit {
+  width: auto;
+  height: 120px;
+  max-width: 100%;
+  object-fit: contain;
+  margin: 16px auto 4px;
+  border-radius: 0;
+  background: transparent;
+}
+body.holdings main { padding-bottom: 96px; }
+body:has(#pay-fees) .page-hero { padding: 48px 0 20px; }
+body:has(#pay-fees) .page-hero + section { padding-top: 28px; }
+
+.float-contact {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 70;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 168px;
+}
+.float-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 148px;
+  min-height: 48px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: 0 10px 30px rgba(11, 31, 58, 0.2);
+  text-align: center;
+  line-height: 1.2;
+}
+.float-call { background: #0B1F3A; color: #fff; }
+.float-wa { background: #0F766E; color: #fff; }
+.float-wa.is-placeholder { background: #fff; color: #0B1F3A; border: 1.5px solid #D4A437; }
+
+.campus-facts,
+.leadership { padding: 72px 0; }
+.section-head h2 { color: #0B1F3A; }
+.section-head p { color: #6B7280; }
+
+.holdings-tools {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 18px;
+  background: rgba(11, 31, 58, 0.96);
+  border-bottom: 1px solid rgba(212, 164, 55, 0.25);
+}
+.holdings-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  margin-right: auto;
+}
+.holdings-actions { display: flex; align-items: center; gap: 14px; }
+.holdings-tools a {
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+}
+.holdings-pay {
+  background: #D4A437;
+  color: #0B1F3A !important;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+.info-band { margin-top: 42px; }
+.info-band h2 { font-size: clamp(26px, 4vw, 40px); margin: 8px 0 16px; }
+body.holdings .fact-card,
+body.holdings .leader-card { color: #111827; }
+body.holdings .section-head h2,
+body.holdings .section-head p,
+body.holdings .info-band h2,
+body.holdings .info-band p { color: rgba(255,255,255,.78); }
+body.holdings .section-head h2,
+body.holdings .info-band h2 { color: #fff; }
+body.holdings footer {
+  background: #080f1a;
+  color: rgba(255,255,255,.7);
+  padding: 64px 0 96px;
+  border-top: 1px solid rgba(212, 164, 55, 0.25);
+}
+body.holdings .foot-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 36px;
+  padding-bottom: 48px;
+}
+body.holdings footer h4 {
+  color: #D4A437;
+  font-size: 12px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+}
+body.holdings footer a { color: rgba(255,255,255,.72); }
+body.holdings footer .legal {
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding: 18px 0 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+body.holdings .brand strong { display: block; font-size: 14px; }
+body.holdings .brand span {
+  display: block;
+  font-size: 10px;
+  color: #D4A437;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 980px) {
+  .fact-grid,
+  .leader-grid,
+  .dept-grid,
+  .funding-grid,
+  .pay-layout,
+  .staff-layout { grid-template-columns: 1fr; }
+  .leader-card img { height: 240px; }
+  .eft-list li { flex-direction: column; }
+  .eft-list strong { text-align: left; }
+}
+@media (max-width: 980px) {
+  body.holdings .foot-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .brand-logo { height: 48px; }
+  .holdings-tools { flex-wrap: wrap; }
+  .holdings-brand { font-size: 12px; }
+  body.holdings .foot-grid { grid-template-columns: 1fr; }
+  .float-contact { right: 10px; bottom: 10px; max-width: 148px; }
+  .float-btn { min-width: 0; padding: 10px 12px; font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .funding-card { transition: none; }
+}
